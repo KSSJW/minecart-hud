@@ -1,0 +1,5 @@
+{
+    "hud.minecart-hud.speed.head": "Speed: ",
+    "hud.minecart-hud.speed.tail": " Block(s)/s",
+    "hud.minecart-hud.speed.direction" : "Direction: "
+}

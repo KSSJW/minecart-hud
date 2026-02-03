@@ -1,0 +1,37 @@
+{
+	"schemaVersion": 1,
+	"id": "minecart-hud",
+	"version": "0.1+1.21.11.fabric.build.1",
+	"name": "Minecart HUD",
+	"description": "Add a head-up display to the minecart.",
+	"authors": [
+		"KSSJW"
+	],
+	"contact": {
+		"homepage": "https://github.com/KSSJW/minecart-hud",
+		"issues": "https://github.com/KSSJW/minecart-hud/issues",
+		"sources": "https://github.com/KSSJW/minecart-hud"
+	},
+	"license": "GPL-3.0",
+	"icon": "assets/minecart-hud/logo/icon.png",
+	"environment": "client",
+	"entrypoints": {
+		"client": [
+			"com.kssjw.minecarthud.client.MinecartHUDClient"
+		]
+	},
+	"mixins": [
+		{
+			"config": "minecart-hud.client.mixins.json",
+			"environment": "client"
+		}
+	],
+	"depends": {
+		"fabricloader": ">=0.18.2",
+		"minecraft": ">=1.21.11",
+		"java": ">=21",
+		"fabric-api": "*"
+	},
+	"suggests": {
+	}
+}
