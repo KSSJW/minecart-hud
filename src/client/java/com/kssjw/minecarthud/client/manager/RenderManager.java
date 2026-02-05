@@ -41,7 +41,7 @@ public class RenderManager {
     }
 
     public static void draw(DrawContext context) {
-        if (MinecraftClient.getInstance().player.getVehicle() instanceof AbstractMinecartEntity minecart) {
+        if (ConfigManager.isEnabled() && MinecraftClient.getInstance().player.getVehicle() instanceof AbstractMinecartEntity minecart) {
             drawSpeed(minecart, context);
             drawDirection(minecart, context);
         }

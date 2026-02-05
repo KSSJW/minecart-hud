@@ -1,5 +1,15 @@
 {
     "hud.minecart-hud.speed.head": "Speed: ",
     "hud.minecart-hud.speed.tail": " Block(s)/s",
-    "hud.minecart-hud.speed.direction" : "Direction: "
+    "hud.minecart-hud.speed.direction" : "Direction: ",
+
+    "toast.minecart-hud.autoconfignotfound.title": "Cloth Config API not found",
+    "toast.minecart-hud.autoconfignotfound.desc": "You need to install the §6Cloth Config API.",
+
+    "text.autoconfig.minecart-hud.title": "Minecart HUD Configuration",
+
+    "text.autoconfig.minecart-hud.category.general": "General Settings",
+
+    "text.autoconfig.minecart-hud.option.enabled.@PrefixText": "Main Switch",
+    "text.autoconfig.minecart-hud.option.enabled": "    Enable Mod"
 }

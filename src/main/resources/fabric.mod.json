@@ -1,7 +1,7 @@
 {
 	"schemaVersion": 1,
 	"id": "minecart-hud",
-	"version": "0.1+1.21.11.fabric.build.1",
+	"version": "1.0.0-alpha.1+1.21.11.fabric.build.1",
 	"name": "Minecart HUD",
 	"description": "Add a head-up display to the minecart.",
 	"authors": [
@@ -12,12 +12,24 @@
 		"issues": "https://github.com/KSSJW/minecart-hud/issues",
 		"sources": "https://github.com/KSSJW/minecart-hud"
 	},
+	"custom": {
+		"modmenu": {
+			"links": {
+				"modmenu.modrinth": "https://modrinth.com/mod/minecart-hud",
+				"modmenu.discord": "https://discord.gg/E7uvw4E4na",
+				"modmenu.curseforge": "https://www.curseforge.com/minecraft/mc-mods/minecart-hud"
+			}
+		}
+	},
 	"license": "GPL-3.0",
 	"icon": "assets/minecart-hud/logo/icon.png",
 	"environment": "client",
 	"entrypoints": {
 		"client": [
-			"com.kssjw.minecarthud.client.MinecartHUDClient"
+			"com.kssjw.minecarthud.client.MinecartHUD"
+		],
+		"modmenu": [
+			"com.kssjw.minecarthud.client.extension.config.ConfigEntry"
 		]
 	},
 	"mixins": [
@@ -33,5 +45,7 @@
 		"fabric-api": "*"
 	},
 	"suggests": {
+		"cloth-config": "*",
+		"modmenu": "*"
 	}
 }

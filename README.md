@@ -13,6 +13,8 @@ Add a head-up display to the minecart.
 ## Compatibility
 - ### Fabric
   - Fabric API (Required)
+  - Cloth Config API (Recommended) (Custom configuration features)
+  - Mod Menu (Recommended) (Mod configuration entry)
 
 ## Progress
 Check out the latest development progress here. [Development Progress](https://windysky.gitbook.io/main/minecraft/minecart-hud/version)
@@ -21,4 +23,4 @@ Check out the latest development progress here. [Development Progress](https://w
 ![Big](https://raw.githubusercontent.com/KSSJW/minecart-hud/refs/heads/main/images/Big.png)
 
 ## Features
-- Lightweight client module, displays minecart speed and direction by default.
+- Lightweight client mod, displays minecart speed and direction by default.
