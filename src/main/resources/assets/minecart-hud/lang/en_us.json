@@ -11,5 +11,18 @@
     "text.autoconfig.minecart-hud.category.general": "General Settings",
 
     "text.autoconfig.minecart-hud.option.enabled.@PrefixText": "Main Switch",
-    "text.autoconfig.minecart-hud.option.enabled": "    Enable Mod"
+    "text.autoconfig.minecart-hud.option.enabled": "    Enable Mod",
+
+    "text.autoconfig.minecart-hud.option.selectedDisplayMode.@PrefixText": "Style",
+    "text.autoconfig.minecart-hud.option.selectedDisplayMode": "    Display Mode",
+    "option.minecart-hud.detailed": "Detailed",
+    "option.minecart-hud.simple": "Simple",
+
+    "text.autoconfig.minecart-hud.option.enabledSpeed.@PrefixText": "Speed",
+    "text.autoconfig.minecart-hud.option.enabledSpeed": "    Display Speed",
+    "text.autoconfig.minecart-hud.option.colorOfSpeed": "    Color of Speed",
+
+    "text.autoconfig.minecart-hud.option.enabledDirection.@PrefixText": "Direction",
+    "text.autoconfig.minecart-hud.option.enabledDirection": "    Display Direction",
+    "text.autoconfig.minecart-hud.option.colorOfDirection": "    Color of Direction"
 }

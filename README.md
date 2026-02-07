@@ -20,7 +20,17 @@ Add a head-up display to the minecart.
 Check out the latest development progress here. [Development Progress](https://windysky.gitbook.io/main/minecraft/minecart-hud/version)
 
 ## Main Gallery
+
 ![Big](https://raw.githubusercontent.com/KSSJW/minecart-hud/refs/heads/main/images/Big.png)
 
 ## Features
 - Lightweight client mod, displays minecart speed and direction by default.
+- Customizable display styles are supported.
+
+![DetailedColor](https://raw.githubusercontent.com/KSSJW/minecart-hud/refs/heads/main/images/DetailedColor.png)
+
+![SimpleColor](https://raw.githubusercontent.com/KSSJW/minecart-hud/refs/heads/main/images/SimpleColor.png)
+
+## Configuration
+
+![Config](https://raw.githubusercontent.com/KSSJW/minecart-hud/refs/heads/main/images/Config.png)
