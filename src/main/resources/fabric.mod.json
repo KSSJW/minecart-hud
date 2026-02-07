@@ -1,7 +1,7 @@
 {
 	"schemaVersion": 1,
 	"id": "minecart-hud",
-	"version": "1.0.0-alpha.1+1.21.11.fabric.build.1",
+	"version": "1.0.0-alpha.1+1.21.11.fabric",
 	"name": "Minecart HUD",
 	"description": "Add a head-up display to the minecart.",
 	"authors": [
