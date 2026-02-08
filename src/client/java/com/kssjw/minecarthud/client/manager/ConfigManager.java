@@ -1,8 +1,12 @@
 package com.kssjw.minecarthud.client.manager;
 
+import com.kssjw.minecarthud.client.extension.config.ConfigEnum;
 import com.kssjw.minecarthud.client.extension.config.ConfigValue;
+import com.kssjw.minecarthud.client.util.TextUtil;
 
 import me.shedaniel.autoconfig.AutoConfig;
+import net.minecraft.client.MinecraftClient;
+import net.minecraft.text.Text;
 
 public class ConfigManager {
     
@@ -22,20 +26,69 @@ public class ConfigManager {
 
     /* */
 
-    public static String getSelectedDisplayMode() {
+    public static ConfigEnum.displayMode getSelectedDisplayMode() {
         if (LoadManager.isAutoConfigLoaded()) {
-            switch (getConfig().selectedDisplayMode) {
-                case ConfigValue.displayMode.Detailed:
-                    return "Detailed";
+            return getConfig().selectedDisplayMode;
+        } else {
+            return ConfigEnum.displayMode.Detailed;
+        }
+    }
 
-                case ConfigValue.displayMode.Simple:
-                    return "Simple";
+    public static int getSelectedDisplayLocationX(Text text) {
+        if (LoadManager.isAutoConfigLoaded()) {
+            switch (getConfig().selectedDisplayLocation) {
+                case ConfigEnum.displayLocation.BottomCenter:
+                    return MinecraftClient.getInstance().getWindow().getScaledWidth() / 2 - TextUtil.getWidthOfText(text) / 2;
+
+                case ConfigEnum.displayLocation.Left:
+                    return 0;
+
+                case ConfigEnum.displayLocation.TopLeft:
+                    return 0;
+
+                case ConfigEnum.displayLocation.TopCenter:
+                    return MinecraftClient.getInstance().getWindow().getScaledWidth() / 2 - TextUtil.getWidthOfText(text) / 2;
+
+                case ConfigEnum.displayLocation.TopRight:
+                    return MinecraftClient.getInstance().getWindow().getScaledWidth() - TextUtil.getWidthOfText(text);
+
+                case ConfigEnum.displayLocation.Right:
+                    return MinecraftClient.getInstance().getWindow().getScaledWidth() - TextUtil.getWidthOfText(text);
             
                 default:
-                    return "Detailed";
+                    return MinecraftClient.getInstance().getWindow().getScaledWidth() / 2 - TextUtil.getWidthOfText(text) / 2;
             }
-        } else{
-            return "Detailed";
+        } else {
+            return MinecraftClient.getInstance().getWindow().getScaledWidth() / 2 - TextUtil.getWidthOfText(text) / 2;
+        }
+    }
+
+    public static int getSelectedDisplayLocationY(Text text) {
+        if (LoadManager.isAutoConfigLoaded()) {
+            switch (getConfig().selectedDisplayLocation) {
+                case ConfigEnum.displayLocation.BottomCenter:
+                    return MinecraftClient.getInstance().getWindow().getScaledHeight() / 3 * 2;
+
+                case ConfigEnum.displayLocation.Left:
+                    return MinecraftClient.getInstance().getWindow().getScaledHeight() / 2;
+
+                case ConfigEnum.displayLocation.TopLeft:
+                    return 0;
+
+                case ConfigEnum.displayLocation.TopCenter:
+                    return 0;
+
+                case ConfigEnum.displayLocation.TopRight:
+                    return 0;
+
+                case ConfigEnum.displayLocation.Right:
+                    return MinecraftClient.getInstance().getWindow().getScaledHeight() / 2;
+            
+                default:
+                    return MinecraftClient.getInstance().getWindow().getScaledHeight() / 3 * 2;
+            }
+        } else {
+            return MinecraftClient.getInstance().getWindow().getScaledHeight() / 3 * 2;
         }
     }
 

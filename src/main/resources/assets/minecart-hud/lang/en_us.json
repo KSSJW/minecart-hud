@@ -17,6 +17,13 @@
     "text.autoconfig.minecart-hud.option.selectedDisplayMode": "    Display Mode",
     "option.minecart-hud.detailed": "Detailed",
     "option.minecart-hud.simple": "Simple",
+    "text.autoconfig.minecart-hud.option.selectedDisplayLocation": "    Display Location",
+    "option.minecart-hud.bottomcenter": "Bottom Center",
+    "option.minecart-hud.left": "Left",
+    "option.minecart-hud.topleft": "Top Left",
+    "option.minecart-hud.topcenter": "Top Center",
+    "option.minecart-hud.topright": "Top Right",
+    "option.minecart-hud.right": "Right",
 
     "text.autoconfig.minecart-hud.option.enabledSpeed.@PrefixText": "Speed",
     "text.autoconfig.minecart-hud.option.enabledSpeed": "    Display Speed",

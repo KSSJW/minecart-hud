@@ -1,5 +1,6 @@
 package com.kssjw.minecarthud.client.manager;
 
+import com.kssjw.minecarthud.client.extension.config.ConfigEnum;
 import com.kssjw.minecarthud.client.util.DirectionUtil;
 import com.kssjw.minecarthud.client.util.SpeedUtil;
 import com.kssjw.minecarthud.client.util.TextUtil;
@@ -22,8 +23,8 @@ public class RenderManager {
         TextUtil.draw(
             context,
             text,
-            MinecraftClient.getInstance().getWindow().getScaledWidth() / 2 - TextUtil.getWidthOfText(text) / 2,
-            MinecraftClient.getInstance().getWindow().getScaledHeight() / 3 * 2,
+            ConfigManager.getSelectedDisplayLocationX(text),
+            ConfigManager.getSelectedDisplayLocationY(text),
             ConfigManager.getColorOfSpeed()
         );
     }
@@ -36,8 +37,8 @@ public class RenderManager {
         TextUtil.draw(
             context,
             text,
-            MinecraftClient.getInstance().getWindow().getScaledWidth() / 2 - TextUtil.getWidthOfText(text) / 2,
-            MinecraftClient.getInstance().getWindow().getScaledHeight() / 3 * 2 + TextUtil.getHeightOfText(text),
+            ConfigManager.getSelectedDisplayLocationX(text),
+            ConfigManager.getSelectedDisplayLocationY(text) + TextUtil.getHeightOfText(text),
             ConfigManager.getColorOfDirection()
         );
     }
@@ -62,8 +63,8 @@ public class RenderManager {
         TextUtil.draw(
             context,
             text,
-            MinecraftClient.getInstance().getWindow().getScaledWidth() / 2 - TextUtil.getWidthOfText(text) / 2,
-            MinecraftClient.getInstance().getWindow().getScaledHeight() / 3 * 2,
+            ConfigManager.getSelectedDisplayLocationX(text),
+            ConfigManager.getSelectedDisplayLocationY(text),
             ConfigManager.getColorOfDirection()
         );
     }
@@ -71,12 +72,12 @@ public class RenderManager {
     public static void draw(DrawContext context) {
         if (ConfigManager.isEnabled() && MinecraftClient.getInstance().player.getVehicle() instanceof AbstractMinecartEntity minecart) {
             switch (ConfigManager.getSelectedDisplayMode()) {
-                case "Detailed":
+                case ConfigEnum.displayMode.Detailed:
                     if (ConfigManager.isEnabledSpeed()) drawSpeed(minecart, context);
                     if (ConfigManager.isEnabledDirection()) drawDirection(minecart, context);
                     break;
 
-                case "Simple":
+                case ConfigEnum.displayMode.Simple:
                     drawAllOnSameLine(minecart, context);
                     break;
 

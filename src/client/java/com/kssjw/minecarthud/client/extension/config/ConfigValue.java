@@ -4,23 +4,8 @@ import me.shedaniel.autoconfig.ConfigData;
 import me.shedaniel.autoconfig.annotation.Config;
 import me.shedaniel.autoconfig.annotation.ConfigEntry;
 
-import net.minecraft.text.Text;
-
 @Config(name = "minecart-hud")
 public class ConfigValue implements ConfigData {
-
-    public static enum displayMode {
-        Detailed("option.minecart-hud.detailed"),
-        Simple("option.minecart-hud.simple");
-
-        private final String key;
-        displayMode(String key) { this.key = key;}
-
-        @Override
-        public String toString() {
-            return Text.translatable(key).getString();
-        }
-    }
     
     /* */
 
@@ -35,7 +20,12 @@ public class ConfigValue implements ConfigData {
     @ConfigEntry.Category("general")
     @ConfigEntry.Gui.PrefixText
     @ConfigEntry.Gui.EnumHandler(option = ConfigEntry.Gui.EnumHandler.EnumDisplayOption.BUTTON)
-    public displayMode selectedDisplayMode = displayMode.Detailed;
+    public ConfigEnum.displayMode selectedDisplayMode = ConfigEnum.displayMode.Detailed;
+
+    // 显示位置
+    @ConfigEntry.Category("general")
+    @ConfigEntry.Gui.EnumHandler(option = ConfigEntry.Gui.EnumHandler.EnumDisplayOption.BUTTON)
+    public ConfigEnum.displayLocation selectedDisplayLocation = ConfigEnum.displayLocation.BottomCenter;
 
     /* */
 
