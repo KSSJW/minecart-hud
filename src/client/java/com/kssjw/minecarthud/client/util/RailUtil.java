@@ -11,7 +11,7 @@ public class RailUtil {
     private RailUtil() {}
 
     public static boolean isCurved(AbstractMinecartEntity minecart) {
-        BlockState state = minecart.getEntityWorld().getBlockState(minecart.getBlockPos());
+        BlockState state = minecart.getWorld().getBlockState(minecart.getBlockPos());
         
         if (state.getBlock() instanceof RailBlock) {
 
