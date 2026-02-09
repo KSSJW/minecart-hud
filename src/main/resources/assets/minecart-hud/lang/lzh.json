@@ -1,0 +1,35 @@
+{
+    "hud.minecart-hud.speed.head": "速：",
+    "hud.minecart-hud.speed.tail": " 方塊/秒",
+    "hud.minecart-hud.speed.direction" : "向：",
+
+    "toast.minecart-hud.autoconfignotfound.title": "未覓 Cloth Config API",
+    "toast.minecart-hud.autoconfignotfound.desc": "君須安裝 §6Cloth Config API。",
+
+    "text.autoconfig.minecart-hud.title": "Minecart HUD 之設",
+
+    "text.autoconfig.minecart-hud.category.general": "通用之設",
+
+    "text.autoconfig.minecart-hud.option.enabled.@PrefixText": "總開關",
+    "text.autoconfig.minecart-hud.option.enabled": "    啟用模組",
+
+    "text.autoconfig.minecart-hud.option.selectedDisplayMode.@PrefixText": "風格",
+    "text.autoconfig.minecart-hud.option.selectedDisplayMode": "    顯示之式",
+    "option.minecart-hud.detailed": "詳",
+    "option.minecart-hud.simple": "簡",
+    "text.autoconfig.minecart-hud.option.selectedDisplayLocation": "    顯示之位",
+    "option.minecart-hud.bottomcenter": "中下",
+    "option.minecart-hud.left": "左",
+    "option.minecart-hud.topleft": "左上",
+    "option.minecart-hud.topcenter": "中上",
+    "option.minecart-hud.topright": "右上",
+    "option.minecart-hud.right": "右",
+
+    "text.autoconfig.minecart-hud.option.enabledSpeed.@PrefixText": "速",
+    "text.autoconfig.minecart-hud.option.enabledSpeed": "    顯速",
+    "text.autoconfig.minecart-hud.option.colorOfSpeed": "    速之色",
+
+    "text.autoconfig.minecart-hud.option.enabledDirection.@PrefixText": "向",
+    "text.autoconfig.minecart-hud.option.enabledDirection": "    顯向",
+    "text.autoconfig.minecart-hud.option.colorOfDirection": "    向之色"
+}

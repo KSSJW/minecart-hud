@@ -9,20 +9,20 @@ public class ConfigValue implements ConfigData {
     
     /* */
 
-    // 启用开关
+    // 启用模组
     @ConfigEntry.Category("general")
     @ConfigEntry.Gui.PrefixText
     public boolean enabled = true;
 
     /* */
 
-    // 显示模式
+    // 显示的模式
     @ConfigEntry.Category("general")
     @ConfigEntry.Gui.PrefixText
     @ConfigEntry.Gui.EnumHandler(option = ConfigEntry.Gui.EnumHandler.EnumDisplayOption.BUTTON)
     public ConfigEnum.displayMode selectedDisplayMode = ConfigEnum.displayMode.Detailed;
 
-    // 显示位置
+    // 显示的位置
     @ConfigEntry.Category("general")
     @ConfigEntry.Gui.EnumHandler(option = ConfigEntry.Gui.EnumHandler.EnumDisplayOption.BUTTON)
     public ConfigEnum.displayLocation selectedDisplayLocation = ConfigEnum.displayLocation.BottomCenter;
