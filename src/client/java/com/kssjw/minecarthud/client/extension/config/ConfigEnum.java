@@ -1,6 +1,6 @@
 package com.kssjw.minecarthud.client.extension.config;
 
-import net.minecraft.text.Text;
+import net.minecraft.network.chat.Component;
 
 public class ConfigEnum {
     
@@ -13,7 +13,7 @@ public class ConfigEnum {
 
         @Override
         public String toString() {
-            return Text.translatable(key).getString();
+            return Component.translatable(key).getString();
         }
     }
 
@@ -30,7 +30,7 @@ public class ConfigEnum {
 
         @Override
         public String toString() {
-            return Text.translatable(key).getString();
+            return Component.translatable(key).getString();
         }
     }
 }

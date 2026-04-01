@@ -1,6 +1,6 @@
 package com.kssjw.minecarthud.client.util;
 
-import net.minecraft.entity.vehicle.AbstractMinecartEntity;
+import net.minecraft.world.entity.vehicle.minecart.AbstractMinecart;
 
 public class SpeedUtil {
 
@@ -8,8 +8,8 @@ public class SpeedUtil {
 
     private static double MIN_SPEED_THRESHOLD = 0.001; // 最低速度阈值
 
-    public static float getSpeed(AbstractMinecartEntity minecart) {
-        double speedSqr = minecart.getVelocity().lengthSquared();
+    public static float getSpeed(AbstractMinecart minecart) {
+        double speedSqr = minecart.getDeltaMovement().lengthSqr();
 
         if (speedSqr < Math.pow(MIN_SPEED_THRESHOLD, 2.0)) return 0;    // 速度阈值判断（使用平方以避免开方）
 

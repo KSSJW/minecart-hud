@@ -1,19 +1,19 @@
 package com.kssjw.minecarthud.client.util;
 
-import net.minecraft.client.MinecraftClient;
-import net.minecraft.client.toast.SystemToast;
-import net.minecraft.client.toast.ToastManager;
-import net.minecraft.text.Text;
+import net.minecraft.client.Minecraft;
+import net.minecraft.client.gui.components.toasts.SystemToast;
+import net.minecraft.client.gui.components.toasts.ToastManager;
+import net.minecraft.network.chat.Component;
 
 public class ToastUtil {
 
     private ToastUtil() {}
 
-    public static void toast(Text title, Text description) {
-        ToastManager toastManager = MinecraftClient.getInstance().getToastManager();
-        SystemToast.show(
+    public static void toast(Component title, Component description) {
+        ToastManager toastManager = Minecraft.getInstance().getToastManager();
+        SystemToast.addOrUpdate(
             toastManager,
-            SystemToast.Type.NARRATOR_TOGGLE,
+            SystemToast.SystemToastId.NARRATOR_TOGGLE,
             title,
             description
         );

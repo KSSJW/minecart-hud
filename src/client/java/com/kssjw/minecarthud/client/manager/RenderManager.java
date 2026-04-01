@@ -4,24 +4,23 @@ import com.kssjw.minecarthud.client.extension.config.ConfigEnum;
 import com.kssjw.minecarthud.client.util.DirectionUtil;
 import com.kssjw.minecarthud.client.util.SpeedUtil;
 import com.kssjw.minecarthud.client.util.TextUtil;
-
-import net.minecraft.client.MinecraftClient;
-import net.minecraft.client.gui.DrawContext;
-import net.minecraft.entity.vehicle.AbstractMinecartEntity;
-import net.minecraft.text.MutableText;
-import net.minecraft.text.Style;
-import net.minecraft.text.Text;
+import net.minecraft.client.Minecraft;
+import net.minecraft.client.gui.GuiGraphicsExtractor;
+import net.minecraft.network.chat.Component;
+import net.minecraft.network.chat.MutableComponent;
+import net.minecraft.network.chat.Style;
+import net.minecraft.world.entity.vehicle.minecart.AbstractMinecart;
 
 public class RenderManager {
 
-    private static void drawSpeed(AbstractMinecartEntity minecart, DrawContext context) {
-        if (MinecraftClient.getInstance().player.getVehicle() == null || MinecraftClient.getInstance().player.getVehicle() != minecart) return;
+    private static void drawSpeed(AbstractMinecart minecart, GuiGraphicsExtractor graphics) {
+        if (Minecraft.getInstance().player.getVehicle() == null || Minecraft.getInstance().player.getVehicle() != minecart) return;
 
-        Text text = Text.translatable("hud.minecart-hud.speed.head")
+        Component text = Component.translatable("hud.minecart-hud.speed.head")
             .append(String.format("%.2f", (double)SpeedUtil.getSpeed(minecart)))
-            .append(Text.translatable("hud.minecart-hud.speed.tail"));
+            .append(Component.translatable("hud.minecart-hud.speed.tail"));
         TextUtil.draw(
-            context,
+            graphics,
             text,
             ConfigManager.getSelectedDisplayLocationX(text),
             ConfigManager.getSelectedDisplayLocationY(text),
@@ -29,13 +28,13 @@ public class RenderManager {
         );
     }
 
-    private static void drawDirection(AbstractMinecartEntity minecart, DrawContext context) {
-        if (MinecraftClient.getInstance().player.getVehicle() == null || MinecraftClient.getInstance().player.getVehicle() != minecart) return;
+    private static void drawDirection(AbstractMinecart minecart, GuiGraphicsExtractor graphics) {
+        if (Minecraft.getInstance().player.getVehicle() == null || Minecraft.getInstance().player.getVehicle() != minecart) return;
 
-        Text text = Text.translatable("hud.minecart-hud.speed.direction")
+        Component text = Component.translatable("hud.minecart-hud.speed.direction")
             .append(String.valueOf(DirectionUtil.getDirectionOfCart(minecart)));
         TextUtil.draw(
-            context,
+            graphics,
             text,
             ConfigManager.getSelectedDisplayLocationX(text),
             ConfigManager.getSelectedDisplayLocationY(text) + TextUtil.getHeightOfText(text),
@@ -43,25 +42,25 @@ public class RenderManager {
         );
     }
 
-    private static void drawAllOnSameLine(AbstractMinecartEntity minecart, DrawContext context) {
-        if (MinecraftClient.getInstance().player.getVehicle() == null || MinecraftClient.getInstance().player.getVehicle() != minecart) return;
+    private static void drawAllOnSameLine(AbstractMinecart minecart, GuiGraphicsExtractor graphics) {
+        if (Minecraft.getInstance().player.getVehicle() == null || Minecraft.getInstance().player.getVehicle() != minecart) return;
         
-        MutableText text = Text.empty();
+        MutableComponent text = Component.empty();
         if (ConfigManager.isEnabledSpeed()) {
             text.append(
-                Text.literal(String.format("%.2f", (double)SpeedUtil.getSpeed(minecart)))
+                Component.literal(String.format("%.2f", (double)SpeedUtil.getSpeed(minecart)))
                     .setStyle(Style.EMPTY.withColor(ConfigManager.getColorOfSpeed()))
             );
         }
         if (ConfigManager.isEnabledDirection()) {
             text.append(
-                Text.literal(String.valueOf(" " + DirectionUtil.getDirectionOfCart(minecart)))
+                Component.literal(String.valueOf(" " + DirectionUtil.getDirectionOfCart(minecart)))
                     .setStyle(Style.EMPTY.withColor(ConfigManager.getColorOfDirection()))
             );
         }
 
         TextUtil.draw(
-            context,
+            graphics,
             text,
             ConfigManager.getSelectedDisplayLocationX(text),
             ConfigManager.getSelectedDisplayLocationY(text),
@@ -69,16 +68,16 @@ public class RenderManager {
         );
     }
 
-    public static void draw(DrawContext context) {
-        if (ConfigManager.isEnabled() && MinecraftClient.getInstance().player.getVehicle() instanceof AbstractMinecartEntity minecart) {
+    public static void draw(GuiGraphicsExtractor graphics) {
+        if (ConfigManager.isEnabled() && Minecraft.getInstance().player.getVehicle() instanceof AbstractMinecart minecart) {
             switch (ConfigManager.getSelectedDisplayMode()) {
                 case ConfigEnum.displayMode.Detailed:
-                    if (ConfigManager.isEnabledSpeed()) drawSpeed(minecart, context);
-                    if (ConfigManager.isEnabledDirection()) drawDirection(minecart, context);
+                    if (ConfigManager.isEnabledSpeed()) drawSpeed(minecart, graphics);
+                    if (ConfigManager.isEnabledDirection()) drawDirection(minecart, graphics);
                     break;
 
                 case ConfigEnum.displayMode.Simple:
-                    drawAllOnSameLine(minecart, context);
+                    drawAllOnSameLine(minecart, graphics);
                     break;
 
                 default:

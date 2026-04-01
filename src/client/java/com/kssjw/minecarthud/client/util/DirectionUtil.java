@@ -1,7 +1,7 @@
 package com.kssjw.minecarthud.client.util;
 
-import net.minecraft.entity.vehicle.AbstractMinecartEntity;
-import net.minecraft.util.math.Vec3d;
+import net.minecraft.world.entity.vehicle.minecart.AbstractMinecart;
+import net.minecraft.world.phys.Vec3;
 
 public class DirectionUtil {
 
@@ -16,8 +16,8 @@ public class DirectionUtil {
     private static final String W = "W";
     private static final String NW = "NW";
 
-    public static String getDirectionOfCart(AbstractMinecartEntity minecart) {
-        Vec3d velocity = minecart.getVelocity();
+    public static String getDirectionOfCart(AbstractMinecart minecart) {
+        Vec3 velocity = minecart.getDeltaMovement();
         double angle = Math.atan2(velocity.z, velocity.x);
         double degrees = Math.toDegrees(angle);
         if (degrees < 0) degrees += 360;

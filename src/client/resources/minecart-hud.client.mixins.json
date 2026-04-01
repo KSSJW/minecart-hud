@@ -1,9 +1,9 @@
 {
 	"required": true,
 	"package": "com.kssjw.minecarthud.client.mixin",
-	"compatibilityLevel": "JAVA_21",
+	"compatibilityLevel": "JAVA_25",
 	"client": [
-		"InGameHudMixin"
+		"GuiMixin"
 	],
 	"injectors": {
 		"defaultRequire": 1

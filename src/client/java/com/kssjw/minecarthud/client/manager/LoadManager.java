@@ -6,8 +6,8 @@ import com.kssjw.minecarthud.client.util.ToastUtil;
 import me.shedaniel.autoconfig.AutoConfig;
 import me.shedaniel.autoconfig.AutoConfigClient;
 import me.shedaniel.autoconfig.serializer.GsonConfigSerializer;
-import net.minecraft.client.gui.screen.Screen;
-import net.minecraft.text.Text;
+import net.minecraft.client.gui.screens.Screen;
+import net.minecraft.network.chat.Component;
 
 public class LoadManager {
 
@@ -33,8 +33,8 @@ public class LoadManager {
             return AutoConfigClient.getConfigScreen(ConfigValue.class, parent).get();
         } else {
             ToastUtil.toast(
-                Text.translatable("toast.minecart-hud.autoconfignotfound.title"),
-                Text.translatable("toast.minecart-hud.autoconfignotfound.desc")
+                Component.translatable("toast.minecart-hud.autoconfignotfound.title"),
+                Component.translatable("toast.minecart-hud.autoconfignotfound.desc")
             );
             return parent;
         }

@@ -5,8 +5,8 @@ import com.kssjw.minecarthud.client.extension.config.ConfigValue;
 import com.kssjw.minecarthud.client.util.TextUtil;
 
 import me.shedaniel.autoconfig.AutoConfig;
-import net.minecraft.client.MinecraftClient;
-import net.minecraft.text.Text;
+import net.minecraft.client.Minecraft;
+import net.minecraft.network.chat.Component;
 
 public class ConfigManager {
     
@@ -34,11 +34,11 @@ public class ConfigManager {
         }
     }
 
-    public static int getSelectedDisplayLocationX(Text text) {
+    public static int getSelectedDisplayLocationX(Component text) {
         if (LoadManager.isAutoConfigLoaded()) {
             switch (getConfig().selectedDisplayLocation) {
                 case ConfigEnum.displayLocation.BottomCenter:
-                    return MinecraftClient.getInstance().getWindow().getScaledWidth() / 2 - TextUtil.getWidthOfText(text) / 2;
+                    return Minecraft.getInstance().getWindow().getGuiScaledWidth() / 2 - TextUtil.getWidthOfText(text) / 2;
 
                 case ConfigEnum.displayLocation.Left:
                     return 0;
@@ -47,30 +47,30 @@ public class ConfigManager {
                     return 0;
 
                 case ConfigEnum.displayLocation.TopCenter:
-                    return MinecraftClient.getInstance().getWindow().getScaledWidth() / 2 - TextUtil.getWidthOfText(text) / 2;
+                    return Minecraft.getInstance().getWindow().getGuiScaledWidth() / 2 - TextUtil.getWidthOfText(text) / 2;
 
                 case ConfigEnum.displayLocation.TopRight:
-                    return MinecraftClient.getInstance().getWindow().getScaledWidth() - TextUtil.getWidthOfText(text);
+                    return Minecraft.getInstance().getWindow().getGuiScaledWidth() - TextUtil.getWidthOfText(text);
 
                 case ConfigEnum.displayLocation.Right:
-                    return MinecraftClient.getInstance().getWindow().getScaledWidth() - TextUtil.getWidthOfText(text);
+                    return Minecraft.getInstance().getWindow().getGuiScaledWidth() - TextUtil.getWidthOfText(text);
             
                 default:
-                    return MinecraftClient.getInstance().getWindow().getScaledWidth() / 2 - TextUtil.getWidthOfText(text) / 2;
+                    return Minecraft.getInstance().getWindow().getGuiScaledWidth() / 2 - TextUtil.getWidthOfText(text) / 2;
             }
         } else {
-            return MinecraftClient.getInstance().getWindow().getScaledWidth() / 2 - TextUtil.getWidthOfText(text) / 2;
+            return Minecraft.getInstance().getWindow().getGuiScaledWidth() / 2 - TextUtil.getWidthOfText(text) / 2;
         }
     }
 
-    public static int getSelectedDisplayLocationY(Text text) {
+    public static int getSelectedDisplayLocationY(Component text) {
         if (LoadManager.isAutoConfigLoaded()) {
             switch (getConfig().selectedDisplayLocation) {
                 case ConfigEnum.displayLocation.BottomCenter:
-                    return MinecraftClient.getInstance().getWindow().getScaledHeight() / 3 * 2;
+                    return Minecraft.getInstance().getWindow().getGuiScaledHeight() / 3 * 2;
 
                 case ConfigEnum.displayLocation.Left:
-                    return MinecraftClient.getInstance().getWindow().getScaledHeight() / 2;
+                    return Minecraft.getInstance().getWindow().getGuiScaledHeight() / 2;
 
                 case ConfigEnum.displayLocation.TopLeft:
                     return 0;
@@ -82,13 +82,13 @@ public class ConfigManager {
                     return 0;
 
                 case ConfigEnum.displayLocation.Right:
-                    return MinecraftClient.getInstance().getWindow().getScaledHeight() / 2;
+                    return Minecraft.getInstance().getWindow().getGuiScaledHeight() / 2;
             
                 default:
-                    return MinecraftClient.getInstance().getWindow().getScaledHeight() / 3 * 2;
+                    return Minecraft.getInstance().getWindow().getGuiScaledHeight() / 3 * 2;
             }
         } else {
-            return MinecraftClient.getInstance().getWindow().getScaledHeight() / 3 * 2;
+            return Minecraft.getInstance().getWindow().getGuiScaledHeight() / 3 * 2;
         }
     }
 
